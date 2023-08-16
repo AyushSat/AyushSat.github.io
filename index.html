@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Satyavarpu</title>
+    <link rel="stylesheet" type="text/css" href="./public.css">
+    <link id="cssLink" rel="stylesheet" type="text/css" href="./light.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lora:wght@500&display=swap" rel="stylesheet">    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  /></head>
+<body>
+    <div id="bg">
+    </div>
+
+    <div id="content">
+        <div class="header" id="header">
+            <span>
+                <div id="name">
+                    <span id="nameColor">
+                        Ayush Satyavarpu
+                        <a id="include" href="./Resume V17.pdf">
+                            <br>
+                            Resume
+                        </a>
+                    </span>
+                </div>
+            </span>
+            <div class="rightLinks">
+                <a href="#exp" class="toplink">Experience</a>
+                <a href="#prj" class="toplink">Projects</a>
+                <a href="./Resume V17.pdf" class="toplink">Resume</a>
+                <span class="toplink" id="darkLight"><img src="./images/darktheme.png" id="darkThemeImg"></span>
+            </div>
+        </div>
+        <div class="firstPanel" id="firstPanel">
+            <div class="space"></div>
+            <div class="bio">
+                <div class="bioContainer">
+                    <p class="title">Hello, I'm Ayush</p>
+                    <span id="positions"></span><span class="cursor">|</span>
+                    <p class="desc">I'm studying Computer Science at UC Irvine with a specialization in Networked Systems
+                        and Intelligent Systems.
+                         Passionate about cloud computing, cybersecurity, and using computer science
+                         to help people by exploring bleeding-edge tech.
+                          </p>
+                </div>
+            </div>
+            <div class="imgDiv">
+                <img class="pfp" src="./images/pfp.jpg">
+            </div>
+        </div>
+        <br id="exp">
+        <br>
+        <br>
+        <br>
+        <h3>E X P E R I E N C E</h3>
+        <div class="experiences">
+            <div class="experienceContainer">
+                <div class="expHeader">
+                    <p class="expTitle">MTS/SWE Intern - Security And Compliance Engineering</p>
+                    <p class="expLocation">Palo Alto, California</p>
+                </div>
+                <div class="expHeader">
+                    <p class="expCompany">VMware</p>
+                    <p class="expDate">June 2022 - September 2022</p>
+                </div>
+                <p class="expDesc">
+                    Implemented products in GoLang allowing engineers/stakeholders
+                     to automate audit evidence gathering from compliance data sources 
+                     like GitLab and AWS for compliance with regimes like PCI & SOC2, 
+                     saving hundreds of hours of engineering capacity. Automated evidence 
+                     bundle generation with compliance metadata such as attestation info,
+                      version history, release tags and anti-tampering security features 
+                      such as SHA256 checksums. Interfaced with internal VMware services 
+                      to collect production code by analyzing Git repositories and their metadata.
+                </p>
+            </div>
+            <div class="experienceContainer">
+                <div class="expHeader">
+                    <p class="expTitle">Cloud Full Stack Software Engineering Intern</p>
+                    <p class="expLocation">Sunnyvale, California</p>
+                </div>
+                <div class="expHeader">
+                    <p class="expCompany">Invigrid</p>
+                    <p class="expDate">June 2021 - December 2021</p>
+                </div>
+                <p class="expDesc">
+                    Developed a backend API in Node.js that performs security scans
+                     on Google Cloud Platform projects and their internal resources 
+                     (VMs, VPCs, Storage Buckets, SQL Instances) to find security vulnerabilities. 
+                     Implemented configurable remediation functionality to the API that patches 
+                     vulnerabilities according to CIS industry standards. Designed and programmed
+                      a multipage portal using JavaScript where users can select projects to review,
+                       author new security policies, and interact with the backend API to remedy 
+                       detected vulnerabilities
+                </p>
+            </div>
+            <div class="experienceContainer">
+                <div class="expHeader">
+                    <p class="expTitle">Full Stack Web Developer</p>
+                    <p class="expLocation">Irvine, California</p>
+                </div>
+                <div class="expHeader">
+                    <p class="expCompany">UC Irvine, Student Center and Events Services</p>
+                    <p class="expDate">September 2022 - June 2024 </p>
+                </div>
+                <p class="expDesc">
+                    Developing in Angular and C# to improve upon LevelUp, 
+                    a program that helps managers track employee progress,
+                     productivity levels, and pay rates as well as administer
+                      employee training/professional development. Spearheading 
+                      and architecting the development of software that allows
+                       administrators to remotely monitor UC Irvine technology
+                        such as websites, on-campus TV screens, and A/V equipment.
+                </p>
+            </div>
+            <div class="experienceContainer">
+                <div class="expHeader">
+                    <p class="expTitle">Computer Science Teaching Assistant</p>
+                    <p class="expLocation">East Palo Alto, California</p>
+                </div>
+                <div class="expHeader">
+                    <p class="expCompany">StreetCode Academy</p>
+                    <p class="expDate">Every Summer, 2017 - 2020</p>
+                </div>
+                <p class="expDesc">
+                    Taught the basics of game development and game design to elementary schoolers living in impoverished areas without 
+                    access to computers and Internet. Also taught the basics of web development in HTML, CSS, and JavaScript 
+                    in another workshop, and served as general IT help around the academy.
+                </p>
+            </div>
+        </div>
+        <br id="prj">
+        <br>
+        <br>
+        <br>
+        <h3>P R O J E C T S</h3>
+        <div class="projects">
+            <div class="projectContainer">
+                <div class="img"><img id="igimg" src="images/ig.png"></div>
+                <div class="data">
+                    <div class="projectHeader">Invigrid Portal</div>
+                    <div class="technologies">Google Cloud SDK, Node.js, HTML/CSS</div>
+                    <div class="prjDesc">
+                        The InviGrid portal offers automatic scans of  Google Cloud Projects and the internal resources
+                    against industry level CIS security benchmarks to assess potential vulnerabilities and threats.
+                    Includes features such as a dashboard where users can authenticate into Google, select projects to review, author new security policies 
+                    and more confidential features. Personally worked 
+                    on backend security checking, frontend UI/UX design and development, and middleware connecting the front and backend.
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="projectContainer">
+                <div class="img"><img id="igimg" src="images/collarwidewhite.png"></div>
+                <div class="data">
+                    <div class="projectHeader">Collar</div>
+                    <div class="technologies">Android Studio, Firebase, Java, XML</div>
+                    <div class="prjDesc">
+                        Collar is a professional networking app with a specific focus on Corporate Social Responsibility.
+                        Similar to LinkedIn, users can create accounts with a Google or Facebook account, connect with 
+                        other users, view posts, find jobs, and be matched with employers/employees with a similar 
+                        view on corporate social responsibility. This app won 4th place nationally in a Mobile Application
+                        Development competition. Personally worked on the design in Figma, implementing different pages in 
+                        Android Studio, and integrating user data in Firebase.
+                    </div>
+                </div>
+            </div>
+            <div class="projectContainer">
+                <div class="img"><img id="igimg" src="images/pp.png"></div>
+                <div class="data">
+                    <div class="projectHeader">PeterPortal</div>
+                    <div class="technologies">React.js/Redux, MongoDB, TypeScript</div>
+                    <div class="prjDesc">
+                    PeterPortal is a website that allows UC Irvine students to view courses, rate professors, analyze course maps, 
+                    and plan out their 4 years at UCI. It acts as a user friendly encyclopedia for all courses at UC Irvine and as a forum
+                    where users can post reviews and ratings for each professor and course. I personally did the entirety of review voting,
+                    which included modifying React components and hooks, creating new MongoDB documents, dealing with Google authentication, 
+                    and connected the database to the backend and the backend to the frontend using TypeScript.
+                    </div>
+                </div>
+            </div>
+            <div class="projectContainer">
+                <div class="img"><img id="igimg" src="images/mc.png"></div>
+                <div class="data">
+                    <div class="projectHeader">MomentumCode</div>
+                    <div class="technologies">Java</div>
+                    <div class="prjDesc">
+                    MomentumCode is a new programming language designed to introduce new programmers to actual programming languages in order 
+                    to bridge the gap between block-coding like Scratch by MIT and beginner languages like Python. There is no complicated installation,
+                    only one jar file that comes with a built in IDE that runs MomentumCode files as well as a built in API for quick reference. The language
+                    offers core programming basics like printing, variables, loops, and arrays. I worked on creating the IDE and the API for reference.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--<h3 id="skills">S K I L L S</h3>
+        <br>
+        <br>
+        <div class="skillsImgs">
+            <img src="./images/java.png">
+            <img src="./images/py.png">
+            <img src="./images/node.png">
+            <img src="./images/react.png">
+            <img src="./images/c++.png">
+            <img src="./images/java.png">
+
+
+        </div>
+        <br>-->
+        <br>
+        <br>
+        <div class="footer">
+            Developed in California by Ayush Satyavarpu 🐉
+        </div>
+        <br>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- 
+To do - add a skills bar, make mobile friendly
+make projects over and show a demo, as well as click to github link
+ -->
