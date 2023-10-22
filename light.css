@@ -68,7 +68,7 @@ a:hover{
     color: rgb(104,104,104);
 }
 
-.footer{
+.footerText{
     color: black;
 }
 
@@ -76,3 +76,9 @@ a:hover{
     color: black !important;
     -webkit-text-fill-color: black;
   }
+
+@media (max-aspect-ratio: 1/1) {
+    .expLocation{
+        color: #0043ca;
+    }
+}

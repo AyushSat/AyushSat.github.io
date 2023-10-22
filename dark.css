@@ -87,11 +87,18 @@ a:hover {
   color: rgb(104, 104, 104);
 }
 
-.footer {
+.footerText {
   color: whitesmoke;
 }
 
 #include{
   color: white !important;
   -webkit-text-fill-color: white;
+}
+
+
+@media (max-aspect-ratio: 1/1) {
+  .expLocation{
+    color: #b38728;
+  }
 }

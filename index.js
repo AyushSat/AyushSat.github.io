@@ -14,25 +14,27 @@ async function run(){
     //     containers[i].style.height = maxHeight + "px";
     // }
 
-    let positions = ["Full Stack Web Developer", "App Developer", "Game Developer", "STEM Teacher", "UI/UX Designer", "Entrepreneur", "Video Producer"];
 
     let index = -1;
     let reducing = false;
     let timeFull = 0;
     function positionTyper(){
         let positions = document.getElementById("positions");
-        let jobs = ["Full Stack Web Developer", "App Developer", "Game Designer/Developer", "STEM Teacher", "UI/UX Designer", "Entrepreneur", "Video Producer"];
+        let jobs = ["Full Stack Web Developer", "iOS Developer",  "Game Developer", "STEM Teacher", "UI/UX Designer", "Entrepreneur", "Video Producer"];
     
         if(positions.innerText == ""){
+            //if the text is empty, then increment which position you are looking at
             index = (index + 1)%jobs.length;
             positions.innerText += jobs[index].charAt(0);
             reducing = false;
         }else{
             if(reducing){
                 positions.innerText = positions.innerText.substring(0, positions.innerText.length - 1);
+                //positions.innerText = "";
             }else{
                 if(positions.innerText.length == jobs[index].length){
-                    if(timeFull>15){
+                    //
+                    if(timeFull>25){
                         reducing = true;
                         timeFull = 0;
                     }else{
