@@ -61,11 +61,14 @@ document.getElementById("darkLight").addEventListener('click', () => {
     if(document.getElementById("cssLink").getAttribute("href") == "./light.css"){
         document.getElementById("cssLink").setAttribute("href", "./dark.css");
         document.getElementById("darkThemeImg").setAttribute("src", "./images/darkThemeInverted.png");
+        document.getElementById("financeTrackerImg").setAttribute("src", "./images/darkModeFinanceTracker.png");
     }else{
         document.getElementById("cssLink").setAttribute("href", "./light.css");
         document.getElementById("darkThemeImg").setAttribute("src", "./images/darktheme.png");
+        document.getElementById("financeTrackerImg").setAttribute("src", "./images/lightModeFinanceTracker.png");
 
     }
+
 });
 
 
