@@ -20,7 +20,7 @@ async function run(){
     let timeFull = 0;
     function positionTyper(){
         let positions = document.getElementById("positions");
-        let jobs = ["Full Stack Web Developer", "iOS Developer",  "Game Developer", "STEM Teacher", "UI/UX Designer", "Entrepreneur", "Video Producer"];
+        let jobs = ["Full Stack Web Developer", "iOS Developer",  "Game Developer", "STEM Teacher", "UI/UX Designer", "Entrepreneur"];
     
         if(positions.innerText == ""){
             //if the text is empty, then increment which position you are looking at
