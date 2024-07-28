@@ -9,7 +9,9 @@ p, span{
 }
 
 #positions{
-    color: #0043ca;
+    background: -webkit-linear-gradient(180deg, #1A2980, #00a6ff);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 
