@@ -1,0 +1,369 @@
+/*
+The CSS property I explored was linear-gradient (found in light/dark.css)
+I used it to create a gradient over my text describing what I do.
+I am a bit confused about how it works in my case, but I believe I changed the background color 
+to the gradient, then made the text transparent.
+*/
+
+* {
+  transition: 0.25s;
+  padding: 0;
+  margin: 0;
+  color: black;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#darkLight img {
+  width: 4vh;
+  height: 4vh;
+}
+
+#darkLight:hover {
+  cursor: pointer;
+}
+.footerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 2vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mailIcon{
+  height: 25px;
+  width: 25px;
+}
+
+.inIcon{
+  height: 20px;
+  width: 20px;
+}
+
+#bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+#content {
+  position: relative;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: fixed;
+  width: 100%;
+  transition: 0.25s;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.firstPanel {
+  display: grid;
+  grid-template-columns: 5% auto 44%;
+  height: 95vh;
+}
+
+.pfp {
+  border-radius: 10%;
+  width: 70%;
+}
+
+.imgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#positions, .cursor, .desc {
+  font-size: 5vh;
+}
+
+p, #positions{
+  font-family: "Open Sans", sans-serif;
+}
+
+#name {
+  font-weight: 500;
+}
+
+.title {
+  font-size: 8vh;
+  font-weight: 500;
+  font-family: "Lora", serif;
+}
+
+
+.bio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bioContainer {
+  padding: 2vh 2vw;
+  border-radius: 3vh;
+}
+
+.cursor {
+  animation: cursor 1.5s infinite;
+}
+
+.coinHeader{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.coins{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.coins span{
+  font-size: 1.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.desc {
+  margin-top: 1vh;
+  font-size: 2.5vh;
+}
+
+.headerBackground {
+  z-index: 5;
+}
+
+.toplink,
+#name, #nameColor {
+  font-size: 2.5vh;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+#name {
+  margin-left: 4vh;
+}
+
+.rightLinks {
+  margin-right: 4vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  font-size: 5vw;
+  text-align: center;
+}
+
+#include{
+  display: none;
+}
+
+.experiences {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 20% 0em 20%;
+}
+
+.experienceContainer {
+  width: 100%;
+  padding: 2em;
+  border-radius: 2em;
+  margin-bottom: 3em;
+}
+
+.expBreak{
+  display: block;
+  height: 5px;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.expDesc{
+  line-height: 30px;
+}
+
+.expTitle,
+.expLocation {
+  font-size: 1.85em;
+  font-weight: 500;
+}
+
+.expCompany,
+.expDate {
+  font-size: 1.6em;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.expDesc, .descParagraph {
+  font-weight: 300;
+  font-size: 1.4em;
+  text-align: justify;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.projectContainer {
+  border-radius: 3vh;
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+  overflow: hidden;
+  transform: scale(0.85);
+  height: 1000px;
+}
+
+.img {
+  display: flex;
+  justify-content: space-around;
+  max-height: 30%;
+  min-height: 30%;
+}
+
+.projectContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  padding: 1.5em;
+  padding-bottom: 0px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.projectHeader {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.technologies {
+  font-size: 1.75em;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.prjDesc {
+  font-weight: 300;
+  font-size: 1.35em;
+  text-align: justify;
+
+}
+
+.link{
+  padding-top: 3px;
+  height: 25px;
+  margin: 0px 5px;
+}
+
+.inLink{
+  padding-top: 6px;
+  height: 25px;
+  margin: 0px 5px;
+}
+
+.link{
+  margin: 0px;
+  color: rgb(0, 208, 255);
+}
+
+@media (max-aspect-ratio: 1/1) {
+  h3{
+    font-size: 10vw;
+  }
+
+  .data{
+    padding-bottom: 30px;
+  }
+
+  .experiences{
+    padding: 2em 2.5em 0em 2.5em;
+  }
+
+  .expCompany, .expDate, .imgDiv{
+    display: none;
+  }
+
+  .firstPanel{
+    display: flex;
+    height: 95vh;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .projectContainer{
+    height: max-content;
+  }
+
+  .title {
+    font-size: 6vh;
+  }
+
+  #positions{
+    font-size: 4vh;
+  }
+
+  .header{
+    grid-template-columns: 100% 0%;
+  }
+
+  .rightLinks{
+    display: none;
+  }
+
+  #name{
+    margin-left: 0vh;
+    text-align: center;
+  }
+
+  #include{
+    display: inline;
+  }
+}
