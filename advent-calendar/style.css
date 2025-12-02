@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #d4af37;
+    /* Gold */
+    --secondary-color: #c2185b;
+    /* Romantic Red/Pink */
+    --bg-color: #fff0f5;
+    /* Lavender Blush */
+    --card-bg: #ffffff;
+    --text-color: #4a4a4a;
+    --locked-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+p.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    width: 90%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.day-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.day-card.locked {
+    background-color: var(--locked-color);
+    cursor: not-allowed;
+    color: #999;
+}
+
+.day-card:not(.locked):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(194, 24, 91, 0.3);
+}
+
+.day-card.opened {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    perspective: 1000px;
+}
+
+.envelope-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: popIn 0.5s ease-out;
+}
+
+@media (orientation: portrait) {
+    .envelope-wrapper {
+        width: 70%;
+        height: 30%;
+    }
+}
+
+@media (orientation: landscape) {
+    .envelope-wrapper {
+        width: 30%;
+        height: 30%;
+    }
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #d32f2f;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c62828;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    transition: transform 0.6s 0.2s ease-in-out, z-index 0.2s 0.4s;
+    z-index: 4;
+}
+
+.envelope.open .flap {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e53935;
+    clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+    z-index: 3;
+    /* Always on top of letter */
+    border-radius: 0 0 10px 10px;
+}
+
+/* The Letter */
+.letter {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 50%;
+    /* Start hidden behind pocket */
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.6s 0.8s ease-in-out, height 0.6s 0.8s ease-in-out;
+    z-index: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.envelope.open .letter {
+    transform: translateY(-20%);
+    /* Slide up slightly */
+    height: 80vh;
+    /* Grow to fill screen */
+    z-index: 2;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.letter-content {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s 1.4s;
+}
+
+.envelope.open .letter-content {
+    opacity: 1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: var(--secondary-color);
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Snowfall effect (optional but romantic) */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes snowflakes-shake {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(80px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.heart {
+    position: fixed;
+    top: -10px;
+    color: #e91e63;
+    /* Pink/Red */
+    font-size: 1.2em;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
